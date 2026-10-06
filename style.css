@@ -1,0 +1,203 @@
+/* C.A.L.M — situs dukungan dan kebijakan privasi.
+   Warna mengikuti ikon aplikasi: biru tua ke hijau toska. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #f7f8f6;
+  --surface: #ffffff;
+  --ink: #16232b;
+  --muted: #5d6b72;
+  --line: #dfe5e3;
+  --accent: #1b7a74;
+  --accent-soft: #e2f1ee;
+  --navy: #12224a;
+  --teal: #2aa79a;
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1518;
+    --surface: #162126;
+    --ink: #e8eeec;
+    --muted: #93a3a6;
+    --line: #26343a;
+    --accent: #6fdcc8;
+    --accent-soft: #15302f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+.wrap.wide { max-width: 62rem; }
+
+/* Kepala halaman */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand img { width: 36px; height: 36px; border-radius: 9px; display: block; }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .95rem; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); }
+.site-nav .lang { color: var(--accent); }
+
+/* Teks */
+
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; letter-spacing: -.015em; margin: 0 0 .6rem; }
+h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.4rem 0 .5rem; }
+h3 { font-size: 1.05rem; margin: 0 0 .3rem; }
+p { margin: 0 0 1rem; }
+ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+li { margin: .4rem 0; }
+
+.updated { color: var(--muted); font-size: .92rem; margin: 0 0 1.75rem; }
+
+.lede {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 0 0 1.25rem;
+}
+
+main { padding: 1.5rem 0 4rem; }
+
+/* Halaman utama */
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0 1rem;
+}
+
+.hero .icon { width: 84px; height: 84px; border-radius: 20px; display: block; margin-bottom: 1.25rem; box-shadow: 0 8px 24px rgb(18 34 74 / .18); }
+.hero p.tagline { font-size: 1.15rem; color: var(--muted); max-width: 34rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1.25rem 0 0; list-style: none; }
+.chips li {
+  margin: 0;
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.status { margin-top: 1.25rem; color: var(--muted); font-size: .95rem; }
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.shots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+}
+
+.card p { margin: 0; color: var(--muted); font-size: .97rem; }
+
+.band {
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 1.4rem;
+  border-radius: var(--radius);
+  color: #f2f7f6;
+  background: linear-gradient(180deg, var(--navy), #1f6f73 70%, var(--teal));
+}
+
+.band h2 { margin-top: 0; color: #ffffff; }
+.band p { margin-bottom: .6rem; }
+.band p:last-child { margin-bottom: 0; }
+.band a { color: #ffffff; }
+
+/* Halaman dukungan */
+
+.faq h2 { margin-top: 2rem; }
+/* Jalur menu boleh pindah baris: di layar ponsel, jalur panjang melebihi lebar layar. */
+.faq .path { font-weight: 600; }
+
+.contact {
+  margin-top: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+}
+
+.contact h2 { margin-top: 0; }
+.contact p:last-child { margin-bottom: 0; }
+
+/* Kaki halaman */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0 3rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
+.site-footer a { color: var(--muted); }
+
+@media (max-width: 34rem) {
+  .shots { gap: .6rem; }
+  .shots img { border-radius: 12px; }
+  .site-header { flex-direction: column; align-items: flex-start; gap: .5rem; }
+}
+
+@media print {
+  .site-nav, .shots { display: none; }
+  body { background: #fff; color: #000; }
+}
