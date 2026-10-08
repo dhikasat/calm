@@ -1,6 +1,6 @@
-# C.A.L.M — website
+# OmniFlow — website
 
-The public website for **C.A.L.M — Chronicle And Life Management**, a planner, focus timer, and
+The public website for **OmniFlow**, a planner, focus timer, and
 journal for iPhone, iPad, and Apple Watch.
 
 - Home: https://dhikasat.github.io/calm/
